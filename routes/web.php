@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Session;
 
 // Web Routes
 Route::middleware(['XSS'])->namespace('Web')->group(function () {
-    Route::get('/maintenance', function(){return view('maintenancemode');})-> name('maintenancemode');
+
     // Home Route
     Route::get('/', 'HomeController@index')->name('home');
     // Course Route
@@ -135,10 +135,7 @@ Route::middleware(['XSS'])->name('payment.')->namespace('Payment')->prefix('paym
 
 
 // Admin Routes
-Route::middleware(['auth:web', 'XSS', 'license', 'audit.admin'])->name('admin.')->namespace('Admin')->prefix('admin')->group(function () {
-
-    //auditlogs route
-    Route::resource('audit-logs', 'AuditLogController')->only(['index', 'show']);
+Route::middleware(['auth:web', 'XSS', 'license'])->name('admin.')->namespace('Admin')->prefix('admin')->group(function () {
 
     // Dashboard Route
     Route::get('/', 'DashboardController@index')->name('dashboard.index');

@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Models;
-use App\Traits\LogsActivity;
-
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -11,8 +9,6 @@ use App\Models\AuditLog;
 class Student extends Authenticatable
 {
     use Notifiable;
-    use LogsActivity;
-
 
     /**
      * The attributes that are mass assignable.
