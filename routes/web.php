@@ -137,6 +137,9 @@ Route::middleware(['XSS'])->name('payment.')->namespace('Payment')->prefix('paym
 // Admin Routes
 Route::middleware(['auth:web', 'XSS', 'license', 'audit.admin'])->name('admin.')->namespace('Admin')->prefix('admin')->group(function () {
 
+    //auditlogs route
+    Route::resource('audit-logs', 'AuditLogController')->only(['index', 'show']);
+
     // Dashboard Route
     Route::get('/', 'DashboardController@index')->name('dashboard.index');
     Route::get('dashboard', 'DashboardController@index')->name('dashboard.index');
