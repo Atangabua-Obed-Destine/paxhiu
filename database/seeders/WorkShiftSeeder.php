@@ -19,8 +19,11 @@ class WorkShiftSeeder extends Seeder
         $work_shift_types = [
             ['title' => 'Morning', 'slug' => 'morning', 'status' => '1'],
             ['title' => 'Evening', 'slug' => 'evening', 'status' => '1'],
+
         ];
 
         DB::table('work_shift_types')->insert($work_shift_types);
     }
 }
+
+
