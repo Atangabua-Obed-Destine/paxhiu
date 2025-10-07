@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Models\AuditLog;
+// use App\Models\AuditLog;
 
 class Student extends Authenticatable
 {
@@ -190,36 +190,36 @@ class Student extends Authenticatable
      protected static function booted()
     {
         // Log when a student is created
-        static::created(function ($student) {
-            AuditLog::create([
-                'user_id' => auth()->id(),  // the ID of the logged-in user
-                'action_type' => 'created',
-                'model_name' => 'Student',
-                'model_id' => $student->id,
-                'description' => 'A new student record was added.',
-            ]);
-        });
+        // static::created(function ($student) {
+        //     AuditLog::create([
+        //         'user_id' => auth()->id(),  // the ID of the logged-in user
+        //         'action_type' => 'created',
+        //         'model_name' => 'Student',
+        //         'model_id' => $student->id,
+        //         'description' => 'A new student record was added.',
+        //     ]);
+        // });
 
         // Log when a student is updated
-        static::updated(function ($student) {
-            AuditLog::create([
-                'user_id' => auth()->id(),
-                'action_type' => 'updated',
-                'model_name' => 'Student',
-                'model_id' => $student->id,
-                'description' => 'Student information was updated.',
-            ]);
-        });
+        // static::updated(function ($student) {
+        //     AuditLog::create([
+        //         'user_id' => auth()->id(),
+        //         'action_type' => 'updated',
+        //         'model_name' => 'Student',
+        //         'model_id' => $student->id,
+        //         'description' => 'Student information was updated.',
+        //     ]);
+        // });
 
         // Log when a student is deleted
-        static::deleted(function ($student) {
-            AuditLog::create([
-                'user_id' => auth()->id(),
-                'action_type' => 'deleted',
-                'model_name' => 'Student',
-                'model_id' => $student->id,
-                'description' => 'A student record was deleted.',
-            ]);
-        });
+        // static::deleted(function ($student) {
+        //     AuditLog::create([
+        //         'user_id' => auth()->id(),
+        //         'action_type' => 'deleted',
+        //         'model_name' => 'Student',
+        //         'model_id' => $student->id,
+        //         'description' => 'A student record was deleted.',
+        //     ]);
+        // });
     }
 }

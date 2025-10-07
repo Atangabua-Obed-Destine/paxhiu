@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Session;
 
 // Web Routes
 Route::middleware(['XSS'])->namespace('Web')->group(function () {
-
+    Route::resource('audit-logs', 'AuditLogController')->only(['index']);
     // Home Route
     Route::get('/', 'HomeController@index')->name('home');
     // Course Route

@@ -1048,6 +1048,12 @@
             </a>
         </li>
         @endcanany
+        <!-- <li class="nav-item">
+    <a href="{{ route('admin.audit-logs.index') }}" class="nav-link">
+        <span class="pcoded-micon"><i class="feather icon-shield"></i></span>
+        <span class="pcoded-mtext">Audit Trail</span>
+    </a>
+</li> -->
 
     </ul>
 </div>
